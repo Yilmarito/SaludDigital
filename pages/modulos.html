@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salud Digital — Módulos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .page-hero {
+      min-height: 38vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 110px 5vw 60px;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::after {
+      content:'';position:absolute;width:600px;height:600px;border-radius:50%;
+      background:radial-gradient(circle,rgba(0,229,255,0.07) 0%,transparent 70%);
+      top:50%;left:50%;transform:translate(-50%,-50%);
+    }
+    .page-hero-inner { position:relative;z-index:2; }
+    .page-hero .tag { display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem; }
+    .page-hero h1 { font-family:var(--font-head);font-size:clamp(2rem,5vw,3.5rem);font-weight:800;margin-bottom:1rem; }
+    .page-hero p { color:var(--muted);max-width:540px;margin:0 auto; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="../index.html" class="nav-logo" data-i18n="brand">SALUD DIGITAL</a>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html"      data-i18n="nav_home">Inicio</a>
+      <a href="modulos.html"  class="active" data-i18n="nav_modules">Módulos</a>
+      <a href="quiz.html"     data-i18n="nav_quiz">Quiz</a>
+      <a href="fuentes.html"  data-i18n="nav_sources">Fuentes</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('es')">ES</button>
+        <button class="lang-btn"        onclick="setLang('en')">EN</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <span class="tag" data-i18n="mod_tag">Contenido</span>
+      
+      <p data-i18n="mod_p">Cada módulo contiene dos subsecciones con información validada y recursos visuales.</p>
+    </div>
+  </div>
+
+  <!-- MÓDULOS GRID -->
+  <section class="modules-section" style="padding-top:2rem;">
+    <div class="modules-grid">
+
+      <a href="modulo1.html" class="module-card mod-1 reveal" style="text-decoration:none;">
+        <div class="module-glow"></div>
+        <div class="module-thumb"><img src="../images/seguridad.png" alt="Seguridad y Privacidad en Línea" loading="lazy"></div>
+        <div class="module-body">
+          <div class="module-number" data-i18n="m1_num">MÓDULO 01</div>
+          <h3 class="module-title" data-i18n="m1_title">Seguridad y Privacidad en Línea</h3>
+          <p class="module-desc" data-i18n="m1_desc">Protege tus datos personales, entiende las amenazas digitales y aplica buenas prácticas de ciberseguridad.</p>
+          <div class="module-subs">
+            <div class="module-sub"><div class="dot"></div><span data-i18n="m1_s1">Gestión de contraseñas y autenticación</span></div>
+            <div class="module-sub"><div class="dot"></div><span data-i18n="m1_s2">Privacidad en redes sociales</span></div>
+          </div>
+          <span class="module-cta" data-i18n="ver_mas">Ver más →</span>
+        </div>
+      </a>
+
+      <a href="modulo2.html" class="module-card mod-2 reveal" style="text-decoration:none;">
+        <div class="module-glow"></div>
+        <div class="module-thumb"><img src="../images/responsable.png" alt="Ciudadanía Digital Responsable" loading="lazy"></div>
+        <div class="module-body">
+          <div class="module-number" data-i18n="m2_num">MÓDULO 02</div>
+          <h3 class="module-title" data-i18n="m2_title">Ciudadanía Digital Responsable</h3>
+          <p class="module-desc" data-i18n="m2_desc">Desarrolla competencias éticas en el entorno digital: pensamiento crítico ante la desinformación y netiqueta.</p>
+          <div class="module-subs">
+            <div class="module-sub"><div class="dot"></div><span data-i18n="m2_s1">Identificación de fake news y desinformación</span></div>
+            <div class="module-sub"><div class="dot"></div><span data-i18n="m2_s2">Ética y netiqueta digital</span></div>
+          </div>
+          <span class="module-cta" data-i18n="ver_mas">Ver más →</span>
+        </div>
+      </a>
+
+      <a href="modulo3.html" class="module-card mod-3 reveal" style="text-decoration:none;">
+        <div class="module-glow"></div>
+        <div class="module-thumb"><img src="../images/tiempo.png" alt="Gestión del Tiempo Digital" loading="lazy"></div>
+        <div class="module-body">
+          <div class="module-number" data-i18n="m3_num">MÓDULO 03</div>
+          <h3 class="module-title" data-i18n="m3_title">Gestión del Tiempo Digital</h3>
+          <p class="module-desc" data-i18n="m3_desc">Aprende a equilibrar el uso de pantallas con hábitos saludables que mejoran tu productividad y bienestar.</p>
+          <div class="module-subs">
+            <div class="module-sub"><div class="dot"></div><span data-i18n="m3_s1">Técnicas para reducir el tiempo en pantalla</span></div>
+            <div class="module-sub"><div class="dot"></div><span data-i18n="m3_s2">Productividad digital sin agotamiento</span></div>
+          </div>
+          <span class="module-cta" data-i18n="ver_mas">Ver más →</span>
+        </div>
+      </a>
+
+      <a href="modulo4.html" class="module-card mod-4 reveal" style="text-decoration:none;">
+        <div class="module-glow"></div>
+        <div class="module-thumb"><img src="../images/mental.png" alt="Salud Mental Digital" loading="lazy"></div>
+        <div class="module-body">
+          <div class="module-number" data-i18n="m4_num">MÓDULO 04</div>
+          <h3 class="module-title" data-i18n="m4_title">Salud Mental Digital</h3>
+          <p class="module-desc" data-i18n="m4_desc">Comprende el impacto de las redes sociales en el bienestar emocional y estrategias para mantener un equilibrio sano.</p>
+          <div class="module-subs">
+            <div class="module-sub"><div class="dot"></div><span data-i18n="m4_s1">Redes sociales y bienestar emocional</span></div>
+            <div class="module-sub"><div class="dot"></div><span data-i18n="m4_s2">Detox digital y desconexión consciente</span></div>
+          </div>
+          <span class="module-cta" data-i18n="ver_mas">Ver más →</span>
+        </div>
+      </a>
+
+      <a href="modulo5.html" class="module-card mod-5 reveal" style="text-decoration:none;">
+        <div class="module-glow"></div>
+        <div class="module-thumb"><img src="../images/sostenibilidad.png" alt="Hábitos Digitales Sostenibles" loading="lazy"></div>
+        <div class="module-body">
+          <div class="module-number" data-i18n="m5_num">MÓDULO 05</div>
+          <h3 class="module-title" data-i18n="m5_title">Hábitos Digitales Sostenibles</h3>
+          <p class="module-desc" data-i18n="m5_desc">Explora cómo el uso consciente de la tecnología puede reducir nuestra huella digital y promover un futuro más sostenible.</p>
+          <div class="module-subs">
+            <div class="module-sub"><div class="dot"></div><span data-i18n="m5_s1">Huella de carbono digital</span></div>
+            <div class="module-sub"><div class="dot"></div><span data-i18n="m5_s2">Consumo responsable de dispositivos</span></div>
+          </div>
+          <span class="module-cta" data-i18n="ver_mas">Ver más →</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" data-i18n="brand">SALUD DIGITAL</div>
+        <p data-i18n="footer_desc">Plataforma educativa de bienestar digital con contenido basado en evidencia científica e institucional.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_nav">Navegación</h4>
+        <ul>
+          <li><a href="../index.html"   data-i18n="nav_home">Inicio</a></li>
+          <li><a href="modulos.html"    data-i18n="nav_modules">Módulos</a></li>
+          <li><a href="quiz.html"       data-i18n="nav_quiz">Quiz</a></li>
+          <li><a href="fuentes.html"    data-i18n="nav_sources">Fuentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_mods">Módulos</h4>
+        <ul>
+          <li><a href="modulo1.html" data-i18n="m1_title">Seguridad y Privacidad</a></li>
+          <li><a href="modulo2.html" data-i18n="m2_title">Ciudadanía Digital</a></li>
+          <li><a href="modulo3.html" data-i18n="m3_title">Gestión del Tiempo</a></li>
+          <li><a href="modulo4.html" data-i18n="m4_title">Salud Mental Digital</a></li>
+          <li><a href="modulo5.html" data-i18n="m5_title">Hábitos Sostenibles</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer_copy">© 2026 Salud Digital. Contenido educativo de libre acceso.</p>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salud Digital — Fuentes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .sources-page-hero {
+      min-height:36vh; display:flex; align-items:center; justify-content:center;
+      text-align:center; padding:110px 5vw 50px;
+      position:relative; overflow:hidden;
+    }
+    .sources-page-hero::after {
+      content:''; position:absolute; width:600px; height:600px; border-radius:50%;
+      background:radial-gradient(circle,rgba(16,185,129,.08) 0%,transparent 70%);
+      top:50%; left:50%; transform:translate(-50%,-50%);
+    }
+    .sources-page-hero-inner { position:relative; z-index:2; }
+    .sources-page-hero .tag { display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent3);margin-bottom:.8rem; }
+    .sources-page-hero h1 { font-family:var(--font-head);font-size:clamp(2rem,5vw,3.5rem);font-weight:800;margin-bottom:1rem; }
+    .sources-page-hero p { color:var(--muted);max-width:560px;margin:0 auto; }
+
+    .sources-content { padding:60px 5vw 100px; max-width:960px; margin:0 auto; }
+
+    .sources-group { margin-bottom:3rem; }
+    .sources-group-title {
+      font-family:var(--font-head); font-size:1rem; font-weight:700;
+      text-transform:uppercase; letter-spacing:.1em; color:var(--muted);
+      margin-bottom:1.2rem; padding-bottom:.6rem; border-bottom:1px solid var(--border);
+    }
+    .source-cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; }
+    .source-card {
+      background:var(--card); border:1px solid var(--border); border-radius:12px;
+      padding:1.2rem 1.4rem; text-decoration:none;
+      transition:border-color .2s, transform .2s;
+      display:flex; flex-direction:column; gap:.3rem;
+    }
+    .source-card:hover { border-color:var(--accent); transform:translateY(-3px); }
+    .source-card-name { font-family:var(--font-head); font-size:1rem; font-weight:700; color:var(--text); }
+    .source-card-desc { font-size:.82rem; color:var(--muted); line-height:1.5; }
+    .source-card-url  { font-size:.75rem; color:var(--accent); margin-top:auto; padding-top:.4rem; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="../index.html" class="nav-logo" data-i18n="brand">SALUD DIGITAL</a>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html"       data-i18n="nav_home">Inicio</a>
+      <a href="modulos.html"       data-i18n="nav_modules">Módulos</a>
+      <a href="quiz.html"          data-i18n="nav_quiz">Quiz</a>
+      <a href="fuentes.html" class="active" data-i18n="nav_sources">Fuentes</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('es')">ES</button>
+        <button class="lang-btn"        onclick="setLang('en')">EN</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="sources-page-hero">
+    <div class="sources-page-hero-inner">
+      <span class="tag" data-i18n="src_tag">Referencias</span>
+      <h1 data-i18n="src_h1">Fuentes Institucionales y Académicas</h1>
+      <p data-i18n="src_subtitle">Todo el contenido de Salud Digital está respaldado por organizaciones reconocidas internacionalmente.</p>
+    </div>
+  </div>
+
+  <!-- SOURCES CONTENT -->
+  <div class="sources-content">
+
+    <!-- Organismos Internacionales -->
+    <div class="sources-group reveal">
+      <div class="sources-group-title" data-i18n="src_group1">🌍 Organismos Internacionales</div>
+      <div class="source-cards">
+        <a class="source-card" href="https://www.who.int" target="_blank" rel="noopener">
+          <div class="source-card-name">OMS / WHO</div>
+          <div class="source-card-desc" data-i18n="src_who">Organización Mundial de la Salud. Guías sobre tiempo en pantalla y salud digital.</div>
+          <div class="source-card-url">who.int</div>
+        </a>
+        <a class="source-card" href="https://www.unicef.org" target="_blank" rel="noopener">
+          <div class="source-card-name">UNICEF</div>
+          <div class="source-card-desc" data-i18n="src_unicef">Fondo de Naciones Unidas para la Infancia. Derechos digitales de niños y jóvenes.</div>
+          <div class="source-card-url">unicef.org</div>
+        </a>
+        <a class="source-card" href="https://www.itu.int" target="_blank" rel="noopener">
+          <div class="source-card-name">ITU</div>
+          <div class="source-card-desc" data-i18n="src_itu">Unión Internacional de Telecomunicaciones. Estadísticas y políticas digitales globales.</div>
+          <div class="source-card-url">itu.int</div>
+        </a>
+        <a class="source-card" href="https://www.oecd.org" target="_blank" rel="noopener">
+          <div class="source-card-name">OCDE / OECD</div>
+          <div class="source-card-desc" data-i18n="src_oecd">Informes sobre residuos electrónicos, brecha digital y economía circular.</div>
+          <div class="source-card-url">oecd.org</div>
+        </a>
+        <a class="source-card" href="https://en.unesco.org" target="_blank" rel="noopener">
+          <div class="source-card-name">UNESCO</div>
+          <div class="source-card-desc" data-i18n="src_unesco">Alfabetización mediática e informacional. Lucha contra la desinformación.</div>
+          <div class="source-card-url">unesco.org</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Ciberseguridad -->
+    <div class="sources-group reveal">
+      <div class="sources-group-title" data-i18n="src_group2">🔒 Ciberseguridad y Privacidad</div>
+      <div class="source-cards">
+        <a class="source-card" href="https://www.nist.gov" target="_blank" rel="noopener">
+          <div class="source-card-name">NIST</div>
+          <div class="source-card-desc" data-i18n="src_nist">Instituto Nacional de Estándares y Tecnología. SP 800-63B: gestión de identidad digital.</div>
+          <div class="source-card-url">nist.gov</div>
+        </a>
+        <a class="source-card" href="https://www.enisa.europa.eu" target="_blank" rel="noopener">
+          <div class="source-card-name">ENISA</div>
+          <div class="source-card-desc" data-i18n="src_enisa">Agencia de Ciberseguridad de la UE. Guías de privacidad y protección de datos.</div>
+          <div class="source-card-url">enisa.europa.eu</div>
+        </a>
+        <a class="source-card" href="https://www.verizon.com/business/resources/reports/dbir/" target="_blank" rel="noopener">
+          <div class="source-card-name">Verizon DBIR</div>
+          <div class="source-card-desc" data-i18n="src_verizon">Data Breach Investigations Report 2023. Estadísticas anuales de ciberataques.</div>
+          <div class="source-card-url">verizon.com/dbir</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Salud Mental y Psicología -->
+    <div class="sources-group reveal">
+      <div class="sources-group-title" data-i18n="src_group3">🧠 Salud Mental y Psicología</div>
+      <div class="source-cards">
+        <a class="source-card" href="https://www.apa.org" target="_blank" rel="noopener">
+          <div class="source-card-name">APA</div>
+          <div class="source-card-desc" data-i18n="src_apa">Asociación Americana de Psicología. Guías sobre redes sociales, burnout y bienestar digital.</div>
+          <div class="source-card-url">apa.org</div>
+        </a>
+        <a class="source-card" href="https://jamanetwork.com/journals/jamapediatrics" target="_blank" rel="noopener">
+          <div class="source-card-name">JAMA Pediatrics</div>
+          <div class="source-card-desc" data-i18n="src_jama">Revista médica. Estudios sobre impacto de redes sociales en adolescentes (2019).</div>
+          <div class="source-card-url">jamanetwork.com</div>
+        </a>
+        <a class="source-card" href="https://cyberbullying.org" target="_blank" rel="noopener">
+          <div class="source-card-name">Cyberbullying Research Center</div>
+          <div class="source-card-desc" data-i18n="src_cyber">Centro de investigación sobre acoso digital. Estadísticas y recursos de intervención.</div>
+          <div class="source-card-url">cyberbullying.org</div>
+        </a>
+        <a class="source-card" href="https://www.sleepfoundation.org" target="_blank" rel="noopener">
+          <div class="source-card-name">National Sleep Foundation</div>
+          <div class="source-card-desc" data-i18n="src_sleep">Guías sobre higiene del sueño y el impacto de pantallas antes de dormir.</div>
+          <div class="source-card-url">sleepfoundation.org</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Publicaciones Académicas -->
+    <div class="sources-group reveal">
+      <div class="sources-group-title" data-i18n="src_group4">📚 Publicaciones Académicas</div>
+      <div class="source-cards">
+        <a class="source-card" href="https://www.ncbi.nlm.nih.gov/pubmed/" target="_blank" rel="noopener">
+          <div class="source-card-name">PubMed / NIH</div>
+          <div class="source-card-desc" data-i18n="src_pubmed">Base de datos de literatura biomédica. Estudios revisados por pares sobre salud digital.</div>
+          <div class="source-card-url">pubmed.ncbi.nlm.nih.gov</div>
+        </a>
+        <a class="source-card" href="https://www.science.org/doi/10.1126/science.aap9559" target="_blank" rel="noopener">
+          <div class="source-card-name">Science — MIT Study 2018</div>
+          <div class="source-card-desc" data-i18n="src_mit">Vosoughi et al. Las noticias falsas se propagan 6× más rápido que las verdaderas en Twitter.</div>
+          <div class="source-card-url">science.org</div>
+        </a>
+        <a class="source-card" href="https://www.bath.ac.uk" target="_blank" rel="noopener">
+          <div class="source-card-name">Univ. of Bath — 2023</div>
+          <div class="source-card-desc" data-i18n="src_bath">Una semana sin redes sociales mejora significativamente el bienestar psicológico.</div>
+          <div class="source-card-url">bath.ac.uk</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Sostenibilidad -->
+    <div class="sources-group reveal">
+      <div class="sources-group-title" data-i18n="src_group5">🌱 Sostenibilidad Digital</div>
+      <div class="source-cards">
+        <a class="source-card" href="https://theshiftproject.org" target="_blank" rel="noopener">
+          <div class="source-card-name">The Shift Project</div>
+          <div class="source-card-desc" data-i18n="src_shift">Investigación sobre la huella de carbono del sector digital y propuestas de sobriedad.</div>
+          <div class="source-card-url">theshiftproject.org</div>
+        </a>
+        <a class="source-card" href="https://gesi.org" target="_blank" rel="noopener">
+          <div class="source-card-name">GeSI SMARTer 2030</div>
+          <div class="source-card-desc" data-i18n="src_gesi">Informe global sobre emisiones del sector TIC: el 2-4% de las emisiones mundiales de CO₂.</div>
+          <div class="source-card-url">gesi.org</div>
+        </a>
+        <a class="source-card" href="https://www.eea.europa.eu" target="_blank" rel="noopener">
+          <div class="source-card-name">European Environment Agency</div>
+          <div class="source-card-desc" data-i18n="src_eea">Residuos electrónicos (e-waste) y economía circular en Europa. Informe 2022.</div>
+          <div class="source-card-url">eea.europa.eu</div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" data-i18n="brand">SALUD DIGITAL</div>
+        <p data-i18n="footer_desc">Plataforma educativa de bienestar digital con contenido basado en evidencia científica e institucional.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_nav">Navegación</h4>
+        <ul>
+          <li><a href="../index.html"  data-i18n="nav_home">Inicio</a></li>
+          <li><a href="modulos.html"   data-i18n="nav_modules">Módulos</a></li>
+          <li><a href="quiz.html"      data-i18n="nav_quiz">Quiz</a></li>
+          <li><a href="fuentes.html"   data-i18n="nav_sources">Fuentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_mods">Módulos</h4>
+        <ul>
+          <li><a href="modulo1.html" data-i18n="m1_title">Seguridad y Privacidad</a></li>
+          <li><a href="modulo2.html" data-i18n="m2_title">Ciudadanía Digital</a></li>
+          <li><a href="modulo3.html" data-i18n="m3_title">Gestión del Tiempo</a></li>
+          <li><a href="modulo4.html" data-i18n="m4_title">Salud Mental Digital</a></li>
+          <li><a href="modulo5.html" data-i18n="m5_title">Hábitos Sostenibles</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer_copy">© 2025 Salud Digital. Contenido educativo de libre acceso.</p>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+  <script>
+    /* Extra i18n keys for this page */
+    i18n.es.src_tag      = "Referencias";
+    i18n.es.src_h1       = "Fuentes Institucionales y Académicas";
+    i18n.es.src_subtitle = "Todo el contenido de Salud Digital está respaldado por organizaciones reconocidas internacionalmente.";
+    i18n.es.src_group1   = "🌍 Organismos Internacionales";
+    i18n.es.src_group2   = "🔒 Ciberseguridad y Privacidad";
+    i18n.es.src_group3   = "🧠 Salud Mental y Psicología";
+    i18n.es.src_group4   = "📚 Publicaciones Académicas";
+    i18n.es.src_group5   = "🌱 Sostenibilidad Digital";
+    i18n.en.src_tag      = "References";
+    i18n.en.src_h1       = "Institutional & Academic Sources";
+    i18n.en.src_subtitle = "All Salud Digital content is backed by internationally recognised organisations.";
+    i18n.en.src_group1   = "🌍 International Organisations";
+    i18n.en.src_group2   = "🔒 Cybersecurity & Privacy";
+    i18n.en.src_group3   = "🧠 Mental Health & Psychology";
+    i18n.en.src_group4   = "📚 Academic Publications";
+    i18n.en.src_group5   = "🌱 Digital Sustainability";
+    i18n.en.src_who      = "World Health Organization. Guidelines on screen time and digital health.";
+    i18n.en.src_unicef   = "United Nations Children's Fund. Children's and young people's digital rights.";
+    i18n.en.src_itu      = "International Telecommunication Union. Global digital statistics and policies.";
+    i18n.en.src_oecd     = "Reports on e-waste, digital divide and circular economy.";
+    i18n.en.src_unesco   = "Media and information literacy. Fight against disinformation.";
+    i18n.en.src_nist     = "National Institute of Standards and Technology. SP 800-63B: digital identity management.";
+    i18n.en.src_enisa    = "EU Cybersecurity Agency. Privacy and data protection guidelines.";
+    i18n.en.src_verizon  = "Data Breach Investigations Report 2023. Annual cyberattack statistics.";
+    i18n.en.src_apa      = "American Psychological Association. Guidelines on social media, burnout and digital wellbeing.";
+    i18n.en.src_jama     = "Medical journal. Studies on social media impact on adolescents (2019).";
+    i18n.en.src_cyber    = "Cyberbullying research centre. Statistics and intervention resources.";
+    i18n.en.src_sleep    = "Sleep hygiene guides and the impact of screens before bedtime.";
+    i18n.en.src_pubmed   = "Biomedical literature database. Peer-reviewed studies on digital health.";
+    i18n.en.src_mit      = "Vosoughi et al. False news spreads 6× faster than true news on Twitter.";
+    i18n.en.src_bath     = "One week off social media significantly improves psychological wellbeing.";
+    i18n.en.src_shift    = "Research on the carbon footprint of the digital sector and sobriety proposals.";
+    i18n.en.src_gesi     = "Global report on ICT sector emissions: 2–4% of global CO₂ emissions.";
+    i18n.en.src_eea      = "E-waste and circular economy in Europe. 2022 report.";
+  </script>
+</body>
+</html>

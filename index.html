@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Salud Digital — Plataforma educativa de bienestar digital basada en evidencia." />
+  <title>Salud Digital — Inicio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <nav>
+    <a href="index.html" class="nav-logo" data-i18n="brand">SALUD DIGITAL</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html"             class="active" data-i18n="nav_home">Inicio</a>
+      <a href="pages/modulos.html"     data-i18n="nav_modules">Módulos</a>
+      <a href="pages/quiz.html"        data-i18n="nav_quiz">Quiz</a>
+      <a href="pages/fuentes.html"     data-i18n="nav_sources">Fuentes</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('es')">ES</button>
+        <button class="lang-btn"        onclick="setLang('en')">EN</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="top">
+    <div class="hero-blob1"></div>
+    <div class="hero-blob2"></div>
+    <div class="hero-inner">
+      <div class="hero-badge" data-i18n="hero_badge">🌐 Bienestar en la era digital</div>
+      <h1>
+        <span data-i18n="hero_h1a">Tu</span>
+        <span class="accent" data-i18n="hero_h1b"> Salud Digital</span><br>
+        <span data-i18n="hero_h1c">Importa</span>
+      </h1>
+      <p data-i18n="hero_p">Aprende a vivir de forma más saludable, consciente y segura en el entorno digital. </p>
+      <div class="hero-ctas">
+        <a href="pages/modulos.html" class="btn-primary" data-i18n="hero_cta1">Explorar Módulos</a>
+        <a href="pages/quiz.html"    class="btn-ghost"   data-i18n="hero_cta2">Hacer el Quiz</a>
+      </div>
+      <div class="stats-bar">
+        <div class="stat-item"><span class="stat-num">5</span><span class="stat-label" data-i18n="stat1">Módulos</span></div>
+        <div class="stat-item"><span class="stat-num">10</span><span class="stat-label" data-i18n="stat2">Subsecciones</span></div>
+        <div class="stat-item"><span class="stat-num">8</span><span class="stat-label" data-i18n="stat3">Fuentes académicas</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GALERÍA DE MÓDULOS ═══ -->
+  <section class="gallery-section" id="modules">
+
+    <!-- PREÁMBULO -->
+    <div class="gallery-preamble reveal">
+      <span class="tag" data-i18n="mod_tag">Contenido</span>
+    
+      <p data-i18n="mod_preamble">En esta plataforma encontrarás un espacio diseñado para promover el bienestar digital, donde podrás explorar contenidos orientados a mejorar tu relación con la tecnología. Aquí descubrirás estrategias para gestionar tu tiempo en línea, fortalecer tu salud mental digital, practicar una ciudadanía responsable y adoptar hábitos digitales sostenibles. A través de recursos prácticos e información respaldada científicamente, buscamos generar conciencia sobre el uso equilibrado de los dispositivos.</p>
+      <div class="gallery-preamble-dots">
+        <span class="gdot active" onclick="goSlide(0)"></span>
+        <span class="gdot" onclick="goSlide(1)"></span>
+        <span class="gdot" onclick="goSlide(2)"></span>
+        <span class="gdot" onclick="goSlide(3)"></span>
+        <span class="gdot" onclick="goSlide(4)"></span>
+      </div>
+    </div>
+
+    <!-- GALERÍA PRINCIPAL: imagen grande + miniaturas -->
+   <div class="gallery-wrapper reveal">
+
+      <!-- Imagen destacada -->
+      <div class="gallery-featured" id="galleryFeatured">
+        <a href="pages/modulo1.html" id="galleryLink" class="gallery-img-link">
+          <img id="galleryImg" src="images/modulo1.jpg" alt="Seguridad y Privacidad en Línea" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-inner">
+              <span class="gallery-num" id="galleryNum">MÓDULO 01</span>
+              <h3 class="gallery-title" id="galleryTitle">Seguridad y Privacidad en Línea</h3>
+              <p class="gallery-desc" id="galleryDesc">Protege tus datos personales, entiende las amenazas digitales y aplica buenas prácticas de ciberseguridad en tu vida cotidiana.</p>
+              <div class="gallery-subs" id="gallerySubs">
+                <span class="gallery-sub-tag">Contraseñas y autenticación</span>
+                <span class="gallery-sub-tag">Privacidad en redes sociales</span>
+              </div>
+              <span class="gallery-cta" data-i18n="ver_mas">Ver módulo →</span>
+            </div>
+          </div>
+        </a>
+        <!-- Flechas de navegación -->
+        <button class="gallery-arrow gallery-prev" onclick="shiftSlide(-1)" aria-label="Anterior">&#8592;</button>
+        <button class="gallery-arrow gallery-next" onclick="shiftSlide(1)"  aria-label="Siguiente">&#8594;</button>
+      </div>
+
+      <!-- Miniaturas -->
+      <div class="gallery-thumbs">
+
+        <div class="gallery-thumb active" onclick="goSlide(0)" data-idx="0">
+          <div class="gallery-thumb-img">
+            <img src="images/seguridad.png" alt="Módulo 01" loading="lazy">
+          </div>
+          <div class="gallery-thumb-info">
+            <span class="gallery-thumb-num" data-i18n="m1_num">MÓDULO 01</span>
+            <span class="gallery-thumb-title" data-i18n="m1_title">Seguridad y Privacidad en Línea</span>
+          </div>
+        </div>
+
+        <div class="gallery-thumb" onclick="goSlide(1)" data-idx="1">
+          <div class="gallery-thumb-img">
+            <img src="images/responsable.png" alt="Módulo 02" loading="lazy">
+          </div>
+          <div class="gallery-thumb-info">
+            <span class="gallery-thumb-num" data-i18n="m2_num">MÓDULO 02</span>
+            <span class="gallery-thumb-title" data-i18n="m2_title">Ciudadanía Digital Responsable</span>
+          </div>
+        </div>
+
+        <div class="gallery-thumb" onclick="goSlide(2)" data-idx="2">
+          <div class="gallery-thumb-img">
+            <img src="images/tiempo.png" alt="Módulo 03" loading="lazy">
+          </div>
+          <div class="gallery-thumb-info">
+            <span class="gallery-thumb-num" data-i18n="m3_num">MÓDULO 03</span>
+            <span class="gallery-thumb-title" data-i18n="m3_title">Gestión del Tiempo Digital</span>
+          </div>
+        </div>
+
+        <div class="gallery-thumb" onclick="goSlide(3)" data-idx="3">
+          <div class="gallery-thumb-img">
+            <img src="images/mental.png" alt="Módulo 04" loading="lazy">
+          </div>
+          <div class="gallery-thumb-info">
+            <span class="gallery-thumb-num" data-i18n="m4_num">MÓDULO 04</span>
+            <span class="gallery-thumb-title" data-i18n="m4_title">Salud Mental Digital</span>
+          </div>
+        </div>
+
+        <div class="gallery-thumb" onclick="goSlide(4)" data-idx="4">
+          <div class="gallery-thumb-img">
+            <img src="images/sostenibilidad.png" alt="Módulo 05" loading="lazy">
+          </div>
+          <div class="gallery-thumb-info">
+            <span class="gallery-thumb-num" data-i18n="m5_num">MÓDULO 05</span>
+            <span class="gallery-thumb-title" data-i18n="m5_title">Hábitos Digitales Sostenibles</span>
+          </div>
+        </div>
+
+      </div><!-- /gallery-thumbs -->
+    </div><!-- /gallery-wrapper -->
+  </section>
+
+  <!-- ── Gallery JS data & logic (inline, no external dependency) ── -->
+  <script>
+  const _galleryData = {
+    es: [
+      { num:"MÓDULO 01", title:"Seguridad y Privacidad en Línea",
+        desc:"Protege tus datos personales, entiende las amenazas digitales y aplica buenas prácticas de ciberseguridad en tu vida cotidiana.",
+        tags:["Contraseñas y autenticación","Privacidad en redes sociales"],
+        img:"images/seguridad.png", href:"pages/modulo1.html" },
+      { num:"MÓDULO 02", title:"Ciudadanía Digital Responsable",
+        desc:"Desarrolla competencias éticas en el entorno digital: pensamiento crítico ante la desinformación, respeto en línea y netiqueta.",
+        tags:["Identificación de fake news","Ética y netiqueta digital"],
+        img:"images/responsable.png", href:"pages/modulo2.html" },
+      { num:"MÓDULO 03", title:"Gestión del Tiempo Digital",
+        desc:"Aprende a equilibrar el uso de pantallas con hábitos saludables que mejoran tu productividad y bienestar general.",
+        tags:["Técnicas para reducir pantalla","Productividad sin agotamiento"],
+        img:"images/tiempo.png", href:"pages/modulo3.html" },
+      { num:"MÓDULO 04", title:"Salud Mental Digital",
+        desc:"Comprende el impacto de las redes sociales en el bienestar emocional y descubre estrategias para mantener un equilibrio sano.",
+        tags:["Redes sociales y bienestar","Detox digital consciente"],
+        img:"images/mental.png", href:"pages/modulo4.html" },
+      { num:"MÓDULO 05", title:"Hábitos Digitales Sostenibles",
+        desc:"Explora cómo el uso consciente de la tecnología puede reducir tu huella digital y promover un futuro más sostenible para todos.",
+        tags:["Huella de carbono digital","Consumo responsable de dispositivos"],
+        img:"images/sostenibilidad.png", href:"pages/modulo5.html" },
+    ],
+    en: [
+      { num:"MODULE 01", title:"Online Security & Privacy",
+        desc:"Protect your personal data, understand digital threats and apply good cybersecurity practices in your everyday life.",
+        tags:["Password management","Privacy on social networks"],
+        img:"images/seguridad.png", href:"pages/modulo1.html" },
+      { num:"MODULE 02", title:"Responsible Digital Citizenship",
+        desc:"Build ethical competencies online: critical thinking against misinformation, respectful engagement and digital etiquette.",
+        tags:["Identifying fake news","Ethics and netiquette"],
+        img:"images/responsable.png", href:"pages/modulo2.html" },
+      { num:"MODULE 03", title:"Digital Time Management",
+        desc:"Learn to balance screen time with healthy habits that improve your productivity and overall wellbeing.",
+        tags:["Techniques to reduce screen time","Productivity without burnout"],
+        img:"images/tiempo.png", href:"pages/modulo3.html" },
+      { num:"MODULE 04", title:"Digital Mental Health",
+        desc:"Understand the impact of social media on emotional wellbeing and discover strategies for a healthier digital balance.",
+        tags:["Social media and wellbeing","Mindful digital detox"],
+        img:"images/mental.png", href:"pages/modulo4.html" },
+      { num:"MODULE 05", title:"Sustainable Digital Habits",
+        desc:"Explore how conscious technology use can reduce your digital footprint and promote a more sustainable future for everyone.",
+        tags:["Digital carbon footprint","Responsible device consumption"],
+        img:"images/sostenibilidad.png", href:"pages/modulo5.html" },
+    ]
+  };
+
+  let _gIdx = 0;
+
+  function _renderGallery(idx) {
+    const lang = typeof currentLang !== 'undefined' ? currentLang : 'es';
+    const d = _galleryData[lang][idx];
+    _gIdx = idx;
+
+    // Fade out → update → fade in
+    const img = document.getElementById('galleryImg');
+    const overlay = document.querySelector('.gallery-overlay-inner');
+    img.style.opacity = '0';
+    overlay.style.opacity = '0';
+
+    setTimeout(() => {
+      img.src = d.img;
+      img.alt = d.title;
+      document.getElementById('galleryLink').href = d.href;
+      document.getElementById('galleryNum').textContent   = d.num;
+      document.getElementById('galleryTitle').textContent = d.title;
+      document.getElementById('galleryDesc').textContent  = d.desc;
+      const subsEl = document.getElementById('gallerySubs');
+      subsEl.innerHTML = d.tags.map(t => `<span class="gallery-sub-tag">${t}</span>`).join('');
+      img.style.opacity = '1';
+      overlay.style.opacity = '1';
+    }, 220);
+
+    // Update dots
+    document.querySelectorAll('.gdot').forEach((el, i) =>
+      el.classList.toggle('active', i === idx));
+
+    // Update thumbs
+    document.querySelectorAll('.gallery-thumb').forEach((el, i) =>
+      el.classList.toggle('active', i === idx));
+  }
+
+  function goSlide(idx) { _renderGallery(idx); }
+
+  function shiftSlide(dir) {
+    const total = _galleryData[typeof currentLang!=='undefined'?currentLang:'es'].length;
+    _renderGallery((_gIdx + dir + total) % total);
+  }
+
+  // Re-render on lang change
+  const _origGallerySetLang = typeof setLang !== 'undefined' ? setLang : null;
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof setLang !== 'undefined') {
+      const __prev = setLang;
+      setLang = function(lang) { __prev(lang); _renderGallery(_gIdx); };
+    }
+    // Auto-advance every 6 s
+    setInterval(() => shiftSlide(1), 6000);
+  });
+  </script>
+  
+
+
+  <!-- ═══ SECCIÓN DE VIDEOS LOCALES ═══
+       Pon los archivos en la carpeta videos/
+       Formatos soportados: .mp4  .webm  .ogg -->
+  <div class="video-section reveal">
+    <div class="video-section-header">
+      <span class="tag">▶ Video</span>
+      <h2 data-i18n="vid_section_title">Videos Recomendados</h2>
+      
+    </div>
+    <div class="video-grid">
+      <div class="video-card">
+        <!-- VIDEO LOCAL: pon el archivo en la carpeta videos/
+             Nombre esperado: index_video1.mp4 -->
+        <div class="video-local-wrap">
+          <div class="video-local-placeholder" onclick="playLocalVideo(this)">
+            <div class="play-icon">&#9654;</div>
+            <span class="placeholder-filename">index_video1.mp4</span>
+            <span class="placeholder-hint" data-i18n="vid_hint">Pon el archivo en la carpeta videos/ y recarga la página</span>
+          </div>
+          <video controls preload="none"
+                 src="video/tante.mp4"
+                 onerror="showVideoError(this)"
+                 oncanplay="hidePlaceholder(this)">
+            Tu navegador no soporta video HTML5.
+          </video>
+        </div>
+        <div class="video-meta">
+          <span class="video-badge" data-i18n="vid_badge_1">Video</span>
+          <div class="video-title" data-i18n="vid_index_1_title">–</div>
+          <div class="video-desc"  data-i18n="vid_index_1_desc">–</div>
+        </div>
+      </div>
+      <div class="video-card">
+        <!-- VIDEO LOCAL: pon el archivo en la carpeta videos/
+             Nombre esperado: index_video2.mp4 -->
+        <div class="video-local-wrap">
+          <div class="video-local-placeholder" onclick="playLocalVideo(this)">
+            <div class="play-icon">&#9654;</div>
+            <span class="placeholder-filename">index_video2.mp4</span>
+            <span class="placeholder-hint" data-i18n="vid_hint">Pon el archivo en la carpeta videos/ y recarga la página</span>
+          </div>
+          <video controls preload="none"
+                 src="video/salu.mp4"
+                 onerror="showVideoError(this)"
+                 oncanplay="hidePlaceholder(this)">
+            Tu navegador no soporta video HTML5.
+          </video>
+        </div>
+        <div class="video-meta">
+          <span class="video-badge" data-i18n="vid_badge_2">Video</span>
+          <div class="video-title" data-i18n="vid_index_2_title">–</div>
+          <div class="video-desc"  data-i18n="vid_index_2_desc">–</div>
+        </div>
+      </div>
+      <div class="video-card">
+        <!-- VIDEO LOCAL: pon el archivo en la carpeta videos/
+             Nombre esperado: index_video3.mp4 -->
+        <div class="video-local-wrap">
+          <div class="video-local-placeholder" onclick="playLocalVideo(this)">
+            <div class="play-icon">&#9654;</div>
+            <span class="placeholder-filename">index_video3.mp4</span>
+            <span class="placeholder-hint" data-i18n="vid_hint">Pon el archivo en la carpeta videos/ y recarga la página</span>
+          </div>
+          <video controls preload="none"
+                 src="video/impa.mp4"
+                 onerror="showVideoError(this)"
+                 oncanplay="hidePlaceholder(this)">
+            Tu navegador no soporta video HTML5.
+          </video>
+        </div>
+        <div class="video-meta">
+          <span class="video-badge" data-i18n="vid_badge_3">Video</span>
+          <div class="video-title" data-i18n="vid_index_3_title">–</div>
+          <div class="video-desc"  data-i18n="vid_index_3_desc">–</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" data-i18n="brand">SALUD DIGITAL</div>
+        <p data-i18n="footer_desc">Plataforma educativa de bienestar digital con contenido basado en evidencia científica e institucional.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_nav">Navegación</h4>
+        <ul>
+          <li><a href="index.html"         data-i18n="nav_home">Inicio</a></li>
+          <li><a href="pages/modulos.html" data-i18n="nav_modules">Módulos</a></li>
+          <li><a href="pages/quiz.html"    data-i18n="nav_quiz">Quiz</a></li>
+          <li><a href="pages/fuentes.html" data-i18n="nav_sources">Fuentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_mods">Módulos</h4>
+        <ul>
+          <li><a href="pages/modulo1.html" data-i18n="m1_title">Seguridad y Privacidad</a></li>
+          <li><a href="pages/modulo2.html" data-i18n="m2_title">Ciudadanía Digital</a></li>
+          <li><a href="pages/modulo3.html" data-i18n="m3_title">Gestión del Tiempo</a></li>
+          <li><a href="pages/modulo4.html" data-i18n="m4_title">Salud Mental Digital</a></li>
+          <li><a href="pages/modulo5.html" data-i18n="m5_title">Hábitos Sostenibles</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer_copy">© 2026 Salud Digital. Contenido educativo de libre acceso.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    /* ── Reproductor de video local ─────────────────────────────
+       hidePlaceholder: oculta el placeholder cuando el video carga.
+       showVideoError:  muestra mensaje si el archivo no se encuentra.
+       playLocalVideo:  intenta reproducir al hacer clic en placeholder.
+    ─────────────────────────────────────────────────────────────── */
+    function hidePlaceholder(videoEl) {
+      const ph = videoEl.previousElementSibling;
+      if (ph && ph.classList.contains('video-local-placeholder')) {
+        ph.style.display = 'none';
+      }
+    }
+    function showVideoError(videoEl) {
+      const ph = videoEl.previousElementSibling;
+      if (ph && ph.classList.contains('video-local-placeholder')) {
+        const hint = ph.querySelector('.placeholder-hint');
+        if (hint) hint.style.color = 'var(--danger, #ef4444)';
+      }
+    }
+    function playLocalVideo(placeholderEl) {
+      const video = placeholderEl.nextElementSibling;
+      if (video && video.tagName === 'VIDEO') {
+        video.load();
+        video.play().catch(() => {});
+      }
+    }
+  </script>
+  <script>
+    /* ── Traducción completa del index ────────────────────────────────
+       Este bloque se ejecuta DESPUÉS de main.js, por lo que setLang
+       ya existe. Envuelve setLang para que además de traducir los
+       elementos data-i18n también actualice la galería y los videos.
+    ─────────────────────────────────────────────────────────────────── */
+    (function () {
+      const _base = setLang;
+
+      setLang = function (lang) {
+        // 1. Traducción genérica (nav, footer, badges, video titles…)
+        currentLang = lang;
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (i18n[lang][key] !== undefined) el.textContent = i18n[lang][key];
+        });
+
+        // 2. Actualizar botones del toggle
+        document.querySelectorAll('.lang-btn').forEach(b =>
+          b.classList.toggle('active', b.textContent === lang.toUpperCase())
+        );
+
+        // 3. Re-renderizar galería en el nuevo idioma
+        if (typeof _renderGallery === 'function') _renderGallery(_gIdx);
+
+        // 4. Quiz: reiniciar en nuevo idioma
+        if (typeof renderQuestion === 'function') {
+          qIndex = 0; score = 0; answered = false;
+          const qc = document.getElementById('quizCard');
+          const qr = document.getElementById('quizResult');
+          if (qc) qc.style.display = '';
+          if (qr) qr.classList.remove('show');
+          renderQuestion();
+        }
+      };
+
+      // Renderizar galería inicial
+      if (typeof _renderGallery === 'function') _renderGallery(0);
+    })();
+  </script>
+</body>
+</html>

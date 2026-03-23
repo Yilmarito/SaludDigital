@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500">
+  <defs>
+    <pattern id="g" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#f472b6" stroke-width="0.4" opacity="0.25"/>
+    </pattern>
+    <radialGradient id="rg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="500" fill="#0a0f1e"/>
+  <rect width="900" height="500" fill="url(#g)"/>
+  <rect width="900" height="500" fill="url(#rg)"/>
+  <rect x="2" y="2" width="896" height="496" fill="none" stroke="#f472b6" stroke-width="1.5"
+        stroke-dasharray="10 5" opacity="0.3" rx="6"/>
+  <circle cx="450" cy="220" r="90" fill="none" stroke="#f472b6" stroke-width="1" opacity="0.2"/>
+  <circle cx="450" cy="220" r="60" fill="none" stroke="#f472b6" stroke-width="1" opacity="0.12"/>
+  <circle cx="450" cy="220" r="32" fill="#f472b6" opacity="0.08"/>
+  <text x="450" y="229" text-anchor="middle" font-family="monospace" font-size="38"
+        fill="#f472b6" font-weight="bold" opacity="0.65">M05</text>
+  <text x="450" y="350" text-anchor="middle" font-family="monospace" font-size="15"
+        fill="#f472b6" opacity="0.45">[ Hábitos Sostenibles ]</text>
+  <text x="450" y="376" text-anchor="middle" font-family="'Helvetica Neue',sans-serif" font-size="12"
+        fill="#8896b0" opacity="0.7">Reemplaza con tu imagen · Replace with your image</text>
+  <text x="450" y="396" text-anchor="middle" font-family="monospace" font-size="10"
+        fill="#8896b0" opacity="0.5">Recomendado: 900 × 500 px</text>
+</svg>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salud Digital — Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .quiz-page-hero {
+      min-height: 36vh;
+      display:flex; align-items:center; justify-content:center;
+      text-align:center; padding:110px 5vw 50px;
+      position:relative; overflow:hidden;
+    }
+    .quiz-page-hero::after {
+      content:''; position:absolute; width:600px; height:600px; border-radius:50%;
+      background:radial-gradient(circle,rgba(124,58,237,.1) 0%,transparent 70%);
+      top:50%; left:50%; transform:translate(-50%,-50%);
+    }
+    .quiz-page-hero-inner { position:relative; z-index:2; }
+    .quiz-page-hero .tag { display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);margin-bottom:.8rem; }
+    .quiz-page-hero h1 { font-family:var(--font-head);font-size:clamp(2rem,5vw,3.5rem);font-weight:800;margin-bottom:1rem; }
+    .quiz-page-hero p { color:var(--muted);max-width:540px;margin:0 auto; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="../index.html" class="nav-logo" data-i18n="brand">SALUD DIGITAL</a>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html"   data-i18n="nav_home">Inicio</a>
+      <a href="modulos.html"   data-i18n="nav_modules">Módulos</a>
+      <a href="quiz.html" class="active" data-i18n="nav_quiz">Quiz</a>
+      <a href="fuentes.html"   data-i18n="nav_sources">Fuentes</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('es')">ES</button>
+        <button class="lang-btn"        onclick="setLang('en')">EN</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="quiz-page-hero">
+    <div class="quiz-page-hero-inner">
+      <span class="tag" data-i18n="quiz_tag">Interactivo</span>
+      <h1 data-i18n="quiz_h2">¿Cuánto sabes de Salud Digital?</h1>
+      <p data-i18n="quiz_p">Pon a prueba tus conocimientos con este quiz de 5 preguntas basadas en evidencia.</p>
+    </div>
+  </div>
+
+  <!-- QUIZ SECTION -->
+  <section class="quiz-section" style="padding-top:2rem; background:transparent;">
+    <div class="quiz-container">
+      <!-- Tarjeta de preguntas -->
+      <div class="quiz-card" id="quizCard">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="quizFill" style="width:20%"></div>
+        </div>
+        <div class="quiz-counter"  id="quizCounter">PREGUNTA 1 / 5</div>
+        <div class="quiz-question" id="quizQuestion"></div>
+        <div class="quiz-options"  id="quizOptions"></div>
+        <div class="quiz-feedback" id="quizFeedback"></div>
+        <button class="quiz-next" id="quizNext" onclick="nextQuestion()">
+          <span data-i18n="quiz_next">Siguiente →</span>
+        </button>
+      </div>
+      <!-- Resultado -->
+      <div class="quiz-card quiz-result" id="quizResult">
+        <div class="result-emoji" id="resultEmoji">🎉</div>
+        <div class="result-score" id="resultScore">5/5</div>
+        <p class="result-msg"     id="resultMsg"></p>
+        <button class="quiz-restart" onclick="restartQuiz()" data-i18n="quiz_restart">
+          Volver a intentarlo
+        </button>
+        <br><br>
+        <a href="modulos.html" class="btn-ghost" style="display:inline-block;margin-top:.5rem;" data-i18n="nav_modules">Explorar Módulos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="margin-top:4rem;">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" data-i18n="brand">SALUD DIGITAL</div>
+        <p data-i18n="footer_desc">Plataforma educativa de bienestar digital con contenido basado en evidencia científica e institucional.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_nav">Navegación</h4>
+        <ul>
+          <li><a href="../index.html"  data-i18n="nav_home">Inicio</a></li>
+          <li><a href="modulos.html"   data-i18n="nav_modules">Módulos</a></li>
+          <li><a href="quiz.html"      data-i18n="nav_quiz">Quiz</a></li>
+          <li><a href="fuentes.html"   data-i18n="nav_sources">Fuentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_mods">Módulos</h4>
+        <ul>
+          <li><a href="modulo1.html" data-i18n="m1_title">Seguridad y Privacidad</a></li>
+          <li><a href="modulo2.html" data-i18n="m2_title">Ciudadanía Digital</a></li>
+          <li><a href="modulo3.html" data-i18n="m3_title">Gestión del Tiempo</a></li>
+          <li><a href="modulo4.html" data-i18n="m4_title">Salud Mental Digital</a></li>
+          <li><a href="modulo5.html" data-i18n="m5_title">Hábitos Sostenibles</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer_copy">© 2025 Salud Digital. Contenido educativo de libre acceso.</p>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>
