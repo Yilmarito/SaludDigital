@@ -5,55 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Salud Digital — Fuentes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
-  <style>
-    .sources-page-hero {
-      min-height:36vh; display:flex; align-items:center; justify-content:center;
-      text-align:center; padding:110px 5vw 50px;
-      position:relative; overflow:hidden;
-    }
-    .sources-page-hero::after {
-      content:''; position:absolute; width:600px; height:600px; border-radius:50%;
-      background:radial-gradient(circle,rgba(16,185,129,.08) 0%,transparent 70%);
-      top:50%; left:50%; transform:translate(-50%,-50%);
-    }
-    .sources-page-hero-inner { position:relative; z-index:2; }
-    .sources-page-hero .tag { display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent3);margin-bottom:.8rem; }
-    .sources-page-hero h1 { font-family:var(--font-head);font-size:clamp(2rem,5vw,3.5rem);font-weight:800;margin-bottom:1rem; }
-    .sources-page-hero p { color:var(--muted);max-width:560px;margin:0 auto; }
-
-    .sources-content { padding:60px 5vw 100px; max-width:960px; margin:0 auto; }
-
-    .sources-group { margin-bottom:3rem; }
-    .sources-group-title {
-      font-family:var(--font-head); font-size:1rem; font-weight:700;
-      text-transform:uppercase; letter-spacing:.1em; color:var(--muted);
-      margin-bottom:1.2rem; padding-bottom:.6rem; border-bottom:1px solid var(--border);
-    }
-    .source-cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; }
-    .source-card {
-      background:var(--card); border:1px solid var(--border); border-radius:12px;
-      padding:1.2rem 1.4rem; text-decoration:none;
-      transition:border-color .2s, transform .2s;
-      display:flex; flex-direction:column; gap:.3rem;
-    }
-    .source-card:hover { border-color:var(--accent); transform:translateY(-3px); }
-    .source-card-name { font-family:var(--font-head); font-size:1rem; font-weight:700; color:var(--text); }
-    .source-card-desc { font-size:.82rem; color:var(--muted); line-height:1.5; }
-    .source-card-url  { font-size:.75rem; color:var(--accent); margin-top:auto; padding-top:.4rem; }
-  </style>
 </head>
 <body>
+  <div id="reading-progress"></div>
 
   <!-- NAV -->
-  <nav>
-    <a href="../index.html" class="nav-logo" data-i18n="brand">SALUD DIGITAL</a>
+    <nav>
+    <a href="../index.html" class="nav-logo" data-i18n="brand">
+      <span class="nav-logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M12 2C8 2 4 6 4 10c0 6 8 12 8 12s8-6 8-12c0-4-4-8-8-8z"/><circle cx="12" cy="10" r="2.5" fill="#fff" stroke="none"/></svg>
+      </span>
+      SALUD DIGITAL
+    </a>
     <div class="nav-links" id="navLinks">
-      <a href="../index.html"       data-i18n="nav_home">Inicio</a>
-      <a href="modulos.html"       data-i18n="nav_modules">Módulos</a>
-      <a href="quiz.html"          data-i18n="nav_quiz">Quiz</a>
-      <a href="fuentes.html" class="active" data-i18n="nav_sources">Fuentes</a>
+      <a href="../index.html" data-i18n="nav_home">Inicio</a>
+      <div class="nav-dropdown">
+        <a data-i18n="nav_modules">Módulos</a>
+        <div class="nav-dropdown-menu">
+          <a href="modulo1.html" class="nav-mod-link">
+            <span class="nav-mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+            <span><span class="nav-mod-num">01</span><span class="nav-mod-title" data-i18n="m1_title">Seguridad y Privacidad</span></span>
+          </a>
+          <a href="modulo2.html" class="nav-mod-link">
+            <span class="nav-mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></span>
+            <span><span class="nav-mod-num">02</span><span class="nav-mod-title" data-i18n="m2_title">Ciudadanía Digital</span></span>
+          </a>
+          <a href="modulo3.html" class="nav-mod-link">
+            <span class="nav-mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+            <span><span class="nav-mod-num">03</span><span class="nav-mod-title" data-i18n="m3_title">Gestión del Tiempo</span></span>
+          </a>
+          <a href="modulo4.html" class="nav-mod-link">
+            <span class="nav-mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+            <span><span class="nav-mod-num">04</span><span class="nav-mod-title" data-i18n="m4_title">Salud Mental Digital</span></span>
+          </a>
+          <a href="modulo5.html" class="nav-mod-link" style="grid-column:span 2">
+            <span class="nav-mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+            <span><span class="nav-mod-num">05</span><span class="nav-mod-title" data-i18n="m5_title">Hábitos Sostenibles</span></span>
+          </a>
+        </div>
+      </div>
+      <div class="nav-dropdown quiz-tooltip-wrap">
+        <a href="quiz.html" data-i18n="nav_quiz">Quiz</a>
+        <span class="quiz-tooltip">Explora los módulos antes del quiz.</span>
+      </div>
+      <a href="fuentes.html" data-i18n="nav_sources">Fuentes</a>
     </div>
     <div style="display:flex;align-items:center;gap:1rem;">
       <div class="lang-toggle">
@@ -67,6 +64,13 @@
   </nav>
 
   <!-- PAGE HERO -->
+
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <a href="../index.html" data-i18n="breadcrumb_home">Inicio</a>
+    <span class="sep">›</span>
+    <span class="current" data-i18n="breadcrumb_sources">Fuentes</span>
+  </nav>
+
   <div class="sources-page-hero">
     <div class="sources-page-hero-inner">
       <span class="tag" data-i18n="src_tag">Referencias</span>
@@ -80,7 +84,7 @@
 
     <!-- Organismos Internacionales -->
     <div class="sources-group reveal">
-      <div class="sources-group-title" data-i18n="src_group1">🌍 Organismos Internacionales</div>
+      <div class="sources-group-title" data-i18n="src_group1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg> Organismos Internacionales</div>
       <div class="source-cards">
         <a class="source-card" href="https://www.who.int" target="_blank" rel="noopener">
           <div class="source-card-name">OMS / WHO</div>
@@ -112,7 +116,7 @@
 
     <!-- Ciberseguridad -->
     <div class="sources-group reveal">
-      <div class="sources-group-title" data-i18n="src_group2">🔒 Ciberseguridad y Privacidad</div>
+      <div class="sources-group-title" data-i18n="src_group2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Ciberseguridad y Privacidad</div>
       <div class="source-cards">
         <a class="source-card" href="https://www.nist.gov" target="_blank" rel="noopener">
           <div class="source-card-name">NIST</div>
@@ -134,7 +138,7 @@
 
     <!-- Salud Mental y Psicología -->
     <div class="sources-group reveal">
-      <div class="sources-group-title" data-i18n="src_group3">🧠 Salud Mental y Psicología</div>
+      <div class="sources-group-title" data-i18n="src_group3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2z"/></svg> Salud Mental y Psicología</div>
       <div class="source-cards">
         <a class="source-card" href="https://www.apa.org" target="_blank" rel="noopener">
           <div class="source-card-name">APA</div>
@@ -161,7 +165,7 @@
 
     <!-- Publicaciones Académicas -->
     <div class="sources-group reveal">
-      <div class="sources-group-title" data-i18n="src_group4">📚 Publicaciones Académicas</div>
+      <div class="sources-group-title" data-i18n="src_group4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Publicaciones Académicas</div>
       <div class="source-cards">
         <a class="source-card" href="https://www.ncbi.nlm.nih.gov/pubmed/" target="_blank" rel="noopener">
           <div class="source-card-name">PubMed / NIH</div>
@@ -183,7 +187,7 @@
 
     <!-- Sostenibilidad -->
     <div class="sources-group reveal">
-      <div class="sources-group-title" data-i18n="src_group5">🌱 Sostenibilidad Digital</div>
+      <div class="sources-group-title" data-i18n="src_group5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Sostenibilidad Digital</div>
       <div class="source-cards">
         <a class="source-card" href="https://theshiftproject.org" target="_blank" rel="noopener">
           <div class="source-card-name">The Shift Project</div>
@@ -203,10 +207,37 @@
       </div>
     </div>
 
+
+    <!-- ── Cita APA para contenido generado por IA ── -->
+    <div class="sources-group reveal">
+      <div class="sources-group-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+        Créditos — Contenido Asistido por Inteligencia Artificial
+      </div>
+      <p style="font-size:.9rem;color:var(--ink2);line-height:1.75;margin-bottom:1.25rem;">
+        Parte del contenido de esta plataforma fue generado con asistencia de herramientas de inteligencia artificial y posteriormente revisado y verificado con las fuentes institucionales listadas. De acuerdo con las directrices de citación APA para contenido generado por IA (<a href="https://apastyle.apa.org/blog/how-to-cite-chatgpt" target="_blank" rel="noopener" style="color:var(--accent);">APA Style Blog, 2023</a>), se indica la siguiente referencia:
+      </p>
+
+      <div class="apa-citation-block">
+        <div class="apa-citation-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Referencia APA — Claude (Anthropic)
+        </div>
+        <p class="apa-citation-text">
+          Anthropic. (2025). <em>Claude</em> (claude-sonnet-4, versión de marzo de 2025) [Large language model]. https://www.anthropic.com
+        </p>
+        <p class="apa-note">
+          Nota: El contenido generado fue revisado, editado y contrastado con las fuentes académicas e institucionales listadas en esta página antes de su publicación. Los textos de los módulos fueron verificados contra fuentes primarias (OMS, NIST, ENISA, APA, entre otras).
+        </p>
+      </div>
+
+      <
+    </div>
+
   </div>
 
   <!-- FOOTER -->
-  <footer>
+    <footer>
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo" data-i18n="brand">SALUD DIGITAL</div>
@@ -215,10 +246,10 @@
       <div class="footer-col">
         <h4 data-i18n="footer_nav">Navegación</h4>
         <ul>
-          <li><a href="../index.html"  data-i18n="nav_home">Inicio</a></li>
-          <li><a href="modulos.html"   data-i18n="nav_modules">Módulos</a></li>
-          <li><a href="quiz.html"      data-i18n="nav_quiz">Quiz</a></li>
-          <li><a href="fuentes.html"   data-i18n="nav_sources">Fuentes</a></li>
+          <li><a href="../index.html"   data-i18n="nav_home">Inicio</a></li>
+          <li><a href="modulos.html"    data-i18n="nav_modules">Módulos</a></li>
+          <li><a href="quiz.html"       data-i18n="nav_quiz">Quiz</a></li>
+          <li><a href="fuentes.html"    data-i18n="nav_sources">Fuentes</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -274,6 +305,19 @@
     i18n.en.src_shift    = "Research on the carbon footprint of the digital sector and sobriety proposals.";
     i18n.en.src_gesi     = "Global report on ICT sector emissions: 2–4% of global CO₂ emissions.";
     i18n.en.src_eea      = "E-waste and circular economy in Europe. 2022 report.";
+  </script>
+
+  <div id="reading-progress"></div>
+  <button id="back-to-top" aria-label="Volver arriba" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+  <script>
+    window.addEventListener('scroll', () => {
+      const doc = document.documentElement;
+      const pct = (window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100;
+      const bar = document.getElementById('reading-progress');
+      if (bar) bar.style.width = Math.min(pct, 100) + '%';
+      const btn = document.getElementById('back-to-top');
+      if (btn) btn.classList.toggle('visible', window.scrollY > 400);
+    });
   </script>
 </body>
 </html>

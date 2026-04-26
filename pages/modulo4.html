@@ -4,42 +4,35 @@
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Salud Digital — Módulo 04</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
-  <style>
-    .mod-hero{min-height:40vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:110px 5vw 60px;position:relative;overflow:hidden;}
-    .mod-hero::after{content:'';position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,#fb923c18 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);}
-    .mod-hero-inner{position:relative;z-index:2;}
-    .mod-hero .tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fb923c;margin-bottom:.8rem;}
-    .mod-hero h1{font-family:var(--font-head);font-size:clamp(2rem,5vw,3.5rem);font-weight:800;margin-bottom:1rem;color:#fb923c;}
-    .mod-hero p{color:var(--muted);max-width:560px;margin:0 auto 1.5rem;}
-    .back-link{display:inline-flex;align-items:center;gap:.4rem;color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .2s;margin-bottom:1.5rem;}
-    .back-link:hover{color:#fb923c;}
-    .content-section{padding:50px 5vw 80px;max-width:900px;margin:0 auto;}
-    .subsection-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;margin-bottom:2rem;transition:border-color .3s;}
-    .subsection-card:hover{border-color:#fb923c44;}
-    .sub-title{font-family:var(--font-head);font-size:1.2rem;font-weight:700;color:#fb923c;margin-bottom:.8rem;}
-    .sub-body{font-size:.95rem;color:var(--muted);line-height:1.85;margin-bottom:1.2rem;}
-    .sub-src{font-size:.73rem;color:rgba(136,150,176,.65);border-top:1px solid var(--border);padding-top:.7rem;margin-top:.8rem;}
-    .rich-block{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.3rem;margin-bottom:.8rem;}
-    .rich-block-benefits{border-color:#fb923c22;background:rgba(0,0,0,.15);}
-    .rich-block-title{font-family:var(--font-head);font-size:.92rem;font-weight:700;color:var(--text);margin-bottom:.7rem;}
-    .rich-list{list-style:none;display:flex;flex-direction:column;gap:.45rem;margin:0;padding:0;}
-    .rich-list li{font-size:.88rem;color:var(--muted);line-height:1.65;padding-left:1.1rem;position:relative;}
-    .rich-list li::before{content:"›";position:absolute;left:0;color:#fb923c;font-weight:700;}
-    .nav-between{display:flex;justify-content:space-between;align-items:center;padding:2rem 5vw;max-width:900px;margin:0 auto;border-top:1px solid var(--border);}
-    .nav-between a{display:inline-flex;align-items:center;gap:.4rem;color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .2s;}
-    .nav-between a:hover{color:#fb923c;}
-  </style>
 </head>
 <body>
+  <div id="reading-progress"></div>
 
   <nav>
-    <a href="../index.html" class="nav-logo" data-i18n="brand">SALUD DIGITAL</a>
+    <a href="../index.html" class="nav-logo" data-i18n="brand">
+      <span class="nav-logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M12 2C8 2 4 6 4 10c0 6 8 12 8 12s8-6 8-12c0-4-4-8-8-8z"/><circle cx="12" cy="10" r="2.5" fill="#fff" stroke="none"/></svg>
+      </span>
+      SALUD DIGITAL
+    </a>
     <div class="nav-links" id="navLinks">
-      <a href="../index.html"   data-i18n="nav_home">Inicio</a>
-      <a href="modulos.html" class="active" data-i18n="nav_modules">Módulos</a>
-      <a href="quiz.html"    data-i18n="nav_quiz">Quiz</a>
+      <a href="../index.html" data-i18n="nav_home">Inicio</a>
+      <div class="nav-dropdown">
+        <a class="active" data-i18n="nav_modules">Módulos</a>
+        <div class="nav-dropdown-menu">
+          <a href="modulo1.html" class="nav-mod-link"><span class="nav-mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span><span><span class="nav-mod-num">01</span><span class="nav-mod-title" data-i18n="m1_title">Seguridad y Privacidad</span></span></a>
+          <a href="modulo2.html" class="nav-mod-link"><span class="nav-mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></span><span><span class="nav-mod-num">02</span><span class="nav-mod-title" data-i18n="m2_title">Ciudadanía Digital</span></span></a>
+          <a href="modulo3.html" class="nav-mod-link"><span class="nav-mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><span><span class="nav-mod-num">03</span><span class="nav-mod-title" data-i18n="m3_title">Gestión del Tiempo</span></span></a>
+          <a href="modulo4.html" class="nav-mod-link"><span class="nav-mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span><span><span class="nav-mod-num">04</span><span class="nav-mod-title" data-i18n="m4_title">Salud Mental Digital</span></span></a>
+          <a href="modulo5.html" class="nav-mod-link" style="grid-column:span 2"><span class="nav-mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span><span class="nav-mod-num">05</span><span class="nav-mod-title" data-i18n="m5_title">Hábitos Sostenibles</span></span></a>
+        </div>
+      </div>
+      <div class="nav-dropdown quiz-tooltip-wrap">
+        <a href="quiz.html" data-i18n="nav_quiz">Quiz</a>
+        <span class="quiz-tooltip">Explora los módulos antes del quiz.</span>
+      </div>
       <a href="fuentes.html" data-i18n="nav_sources">Fuentes</a>
     </div>
     <div style="display:flex;align-items:center;gap:1rem;">
@@ -47,108 +40,126 @@
         <button class="lang-btn active" onclick="setLang('es')">ES</button>
         <button class="lang-btn"        onclick="setLang('en')">EN</button>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Menú">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <a href="../index.html" data-i18n="breadcrumb_home">Inicio</a>
+    <span class="sep">›</span>
+    <a href="modulos.html" data-i18n="breadcrumb_modules">Módulos</a>
+    <span class="sep">›</span>
+    <span class="current" data-i18n="m4_title">Módulo 04</span>
+  </nav>
+
   <div class="mod-hero">
+    <img class="hero-module-img" src="../images/modulo4.jpg" alt="" aria-hidden="true">
     <div class="mod-hero-inner">
-      <a href="modulos.html" class="back-link">← <span data-i18n="nav_modules">Módulos</span></a>
-      <div class="tag">MÓDULO 04 / MODULE 04</div>
-      <div class="hero-module-img"><img src="../images/mental.png" alt="Salud Mental Digital" loading="lazy"></div>
-      <h1 data-i18n="m4_title">Salud Mental Digital</h1>
-      <p data-i18n="m4_desc">Comprende el impacto de las redes sociales y desarrolla hábitos de bienestar emocional.</p>
+      <a href="modulos.html" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="14" height="14"><polyline points="15 18 9 12 15 6"/></svg>
+        <span data-i18n="breadcrumb_modules">Módulos</span>
+      </a>
+      <span class="tag">MÓDULO 04</span>
+      <h1 data-i18n="m4_title">Módulo 04</h1>
+      <p data-i18n="m4_desc">Descripción del módulo.</p>
     </div>
   </div>
 
   <div class="content-section">
     <!-- ══ SUBSECCIÓN 1 ══ -->
     <div class="subsection-card reveal">
-      <span class="sub-icon">
-        <img src="../images/red1.png" alt="Redes Sociales y Bienestar" id="sub1ImgAlt" loading="lazy">
-      </span>
-      <div class="sub-title" id="sub1Title" data-i18n="m4_sub1_title">–</div>
+      <div class="sub-eyebrow">
+        <span class="sub-eyebrow-num">Subsección 1 / 2</span>
+      </div>
+      <div class="sub-title">
+        <span class="sub-title-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+        <span id="sub1Title" data-i18n="m4_sub1_title">–</span>
+      </div>
+      <div class="sub-img-wrap">
+        <img src="../images/m4_sub1.jpg" alt="" id="sub1ImgAlt" loading="lazy">
+      </div>
 
-      <!-- VIDEO LOCAL: pon el archivo en la carpeta videos/
-           Nombre esperado: m4_video1.mp4
-           Formatos soportados: .mp4  .webm  .ogg -->
       <div class="video-local-wrap" id="wrap_m4_video1_mp4">
-        <!-- Placeholder visible hasta que el video carga -->
         <div class="video-local-placeholder" onclick="playLocalVideo(this)">
-          <div class="play-icon">&#9654;</div>
+          <div class="play-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
           <span class="placeholder-filename">m4_video1.mp4</span>
           <span class="placeholder-hint" data-i18n="vid_hint">Pon el archivo en la carpeta videos/ y recarga la página</span>
         </div>
-        <video controls preload="none"
-               src="../videos/m4_video1.mp4"
-               onerror="showVideoError(this)"
-               oncanplay="hidePlaceholder(this)">
+        <video controls preload="none" src="../videos/m4_video1.mp4"
+               onerror="showVideoError(this)" oncanplay="hidePlaceholder(this)">
           Tu navegador no soporta video HTML5.
         </video>
       </div>
-      <div class="video-local-label" data-i18n="vid_m4_lbl1">&#9654; ▶ Video 1</div>
+      <div class="video-local-label" data-i18n="vid_m4_lbl1">Video 1</div>
 
       <p class="sub-body" id="sub1Body">–</p>
 
       <div class="rich-block" id="sub1TipsBlock">
-        <div class="rich-block-title" id="sub1TipsTitle">–</div>
+        <div class="rich-block-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg><span id="sub1TipsTitle">–</span></div>
         <ul class="rich-list" id="sub1Tips"></ul>
       </div>
       <div class="rich-block" id="sub1HabitsBlock">
-        <div class="rich-block-title" id="sub1HabitsTitle">–</div>
+        <div class="rich-block-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg><span id="sub1HabitsTitle">–</span></div>
         <ul class="rich-list" id="sub1Habits"></ul>
       </div>
       <div class="rich-block rich-block-benefits" id="sub1BenefitsBlock">
-        <div class="rich-block-title" id="sub1BenefitsTitle">–</div>
+        <div class="rich-block-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span id="sub1BenefitsTitle">–</span></div>
         <ul class="rich-list" id="sub1Benefits"></ul>
       </div>
-
-      <div class="sub-src" id="sub1Src">–</div>
+      <div class="sub-src">
+        <svg class="sub-src-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <span id="sub1Src">–</span>
+      </div>
     </div>
+
     <!-- ══ SUBSECCIÓN 2 ══ -->
     <div class="subsection-card reveal">
-      <span class="sub-icon">
-        <img src="../images/detox.png" alt="Detox Digital" id="sub2ImgAlt" loading="lazy">
-      </span>
-      <div class="sub-title" id="sub2Title" data-i18n="m4_sub2_title">–</div>
+      <div class="sub-eyebrow">
+        <span class="sub-eyebrow-num">Subsección 2 / 2</span>
+      </div>
+      <div class="sub-title">
+        <span class="sub-title-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span>
+        <span id="sub2Title" data-i18n="m4_sub2_title">–</span>
+      </div>
+      <div class="sub-img-wrap">
+        <img src="../images/m4_sub2.jpg" alt="" id="sub2ImgAlt" loading="lazy">
+      </div>
 
-      <!-- VIDEO LOCAL: pon el archivo en la carpeta videos/
-           Nombre esperado: m4_video2.mp4
-           Formatos soportados: .mp4  .webm  .ogg -->
       <div class="video-local-wrap" id="wrap_m4_video2_mp4">
-        <!-- Placeholder visible hasta que el video carga -->
         <div class="video-local-placeholder" onclick="playLocalVideo(this)">
-          <div class="play-icon">&#9654;</div>
+          <div class="play-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
           <span class="placeholder-filename">m4_video2.mp4</span>
           <span class="placeholder-hint" data-i18n="vid_hint">Pon el archivo en la carpeta videos/ y recarga la página</span>
         </div>
-        <video controls preload="none"
-               src="../videos/m4_video2.mp4"
-               onerror="showVideoError(this)"
-               oncanplay="hidePlaceholder(this)">
+        <video controls preload="none" src="../videos/m4_video2.mp4"
+               onerror="showVideoError(this)" oncanplay="hidePlaceholder(this)">
           Tu navegador no soporta video HTML5.
         </video>
       </div>
-      <div class="video-local-label" data-i18n="vid_m4_lbl2">&#9654; ▶ Video 2</div>
+      <div class="video-local-label" data-i18n="vid_m4_lbl2">Video 2</div>
 
       <p class="sub-body" id="sub2Body">–</p>
 
       <div class="rich-block" id="sub2TipsBlock">
-        <div class="rich-block-title" id="sub2TipsTitle">–</div>
+        <div class="rich-block-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg><span id="sub2TipsTitle">–</span></div>
         <ul class="rich-list" id="sub2Tips"></ul>
       </div>
       <div class="rich-block" id="sub2HabitsBlock">
-        <div class="rich-block-title" id="sub2HabitsTitle">–</div>
+        <div class="rich-block-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg><span id="sub2HabitsTitle">–</span></div>
         <ul class="rich-list" id="sub2Habits"></ul>
       </div>
       <div class="rich-block rich-block-benefits" id="sub2BenefitsBlock">
-        <div class="rich-block-title" id="sub2BenefitsTitle">–</div>
+        <div class="rich-block-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span id="sub2BenefitsTitle">–</span></div>
         <ul class="rich-list" id="sub2Benefits"></ul>
       </div>
-
-      <div class="sub-src" id="sub2Src">–</div>
+      <div class="sub-src">
+        <svg class="sub-src-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <span id="sub2Src">–</span>
+      </div>
     </div>
   </div>
 
@@ -167,10 +178,10 @@
       <div class="footer-col">
         <h4 data-i18n="footer_nav">Navegación</h4>
         <ul>
-          <li><a href="../index.html"  data-i18n="nav_home">Inicio</a></li>
-          <li><a href="modulos.html"   data-i18n="nav_modules">Módulos</a></li>
-          <li><a href="quiz.html"      data-i18n="nav_quiz">Quiz</a></li>
-          <li><a href="fuentes.html"   data-i18n="nav_sources">Fuentes</a></li>
+          <li><a href="../index.html" data-i18n="nav_home">Inicio</a></li>
+          <li><a href="modulos.html" data-i18n="nav_modules">Módulos</a></li>
+          <li><a href="quiz.html"    data-i18n="nav_quiz">Quiz</a></li>
+          <li><a href="fuentes.html" data-i18n="nav_sources">Fuentes</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -185,36 +196,23 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p data-i18n="footer_copy">© 2026 Salud Digital. Contenido educativo de libre acceso.</p>
+      <p data-i18n="footer_copy">© 2025 Salud Digital. Contenido educativo de libre acceso.</p>
     </div>
   </footer>
 
   <script src="../main.js"></script>
   <script>
-    /* ── Reproductor de video local ─────────────────────────────
-       hidePlaceholder: oculta el placeholder cuando el video carga.
-       showVideoError:  muestra mensaje si el archivo no se encuentra.
-       playLocalVideo:  intenta reproducir al hacer clic en placeholder.
-    ─────────────────────────────────────────────────────────────── */
     function hidePlaceholder(videoEl) {
       const ph = videoEl.previousElementSibling;
-      if (ph && ph.classList.contains('video-local-placeholder')) {
-        ph.style.display = 'none';
-      }
+      if (ph && ph.classList.contains('video-local-placeholder')) ph.style.display = 'none';
     }
     function showVideoError(videoEl) {
       const ph = videoEl.previousElementSibling;
-      if (ph && ph.classList.contains('video-local-placeholder')) {
-        const hint = ph.querySelector('.placeholder-hint');
-        if (hint) hint.style.color = 'var(--danger, #ef4444)';
-      }
+      if (ph) { const h = ph.querySelector('.placeholder-hint'); if (h) h.style.color='var(--accent2)'; }
     }
     function playLocalVideo(placeholderEl) {
       const video = placeholderEl.nextElementSibling;
-      if (video && video.tagName === 'VIDEO') {
-        video.load();
-        video.play().catch(() => {});
-      }
+      if (video && video.tagName === 'VIDEO') { video.load(); video.play().catch(()=>{}); }
     }
   </script>
   <script>
@@ -233,7 +231,7 @@
       const f = (id, val) => { const el = document.getElementById(id); if(el) el.textContent = val||''; };
       f('sub1Title',         t[MID+'_sub1_title']);
       f('sub1Body',          t[MID+'_sub1_body']);
-      f('sub1Src',           '📚 '+(t[MID+'_sub1_src']||''));
+      f('sub1Src',           t[MID+'_sub1_src']||'');
       f('sub1TipsTitle',     t[MID+'_sub1_tips_title']);
       f('sub1HabitsTitle',   t[MID+'_sub1_habits_title']);
       f('sub1BenefitsTitle', t[MID+'_sub1_benefits_title']);
@@ -242,22 +240,32 @@
       renderList('sub1Benefits', t[MID+'_sub1_benefits']);
       f('sub2Title',         t[MID+'_sub2_title']);
       f('sub2Body',          t[MID+'_sub2_body']);
-      f('sub2Src',           '📚 '+(t[MID+'_sub2_src']||''));
+      f('sub2Src',           t[MID+'_sub2_src']||'');
       f('sub2TipsTitle',     t[MID+'_sub2_tips_title']);
       f('sub2HabitsTitle',   t[MID+'_sub2_habits_title']);
       f('sub2BenefitsTitle', t[MID+'_sub2_benefits_title']);
       renderList('sub2Tips',     t[MID+'_sub2_tips']);
       renderList('sub2Habits',   t[MID+'_sub2_habits']);
       renderList('sub2Benefits', t[MID+'_sub2_benefits']);
-      const i1=document.getElementById('sub1ImgAlt');
-      const i2=document.getElementById('sub2ImgAlt');
-      if(i1) i1.alt=lang==='es'?'Redes Sociales y Bienestar':'Social Media & Wellbeing';
-      if(i2) i2.alt=lang==='es'?'Detox Digital':'Digital Detox';
       document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===lang.toUpperCase()));
     }
     applyPageLang(typeof currentLang!=='undefined'?currentLang:'es');
     const _prevSetLang = setLang;
     setLang = function(lang){ currentLang=lang; applyPageLang(lang); };
+  </script>
+
+  <button id="back-to-top" aria-label="Volver arriba" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" width="16" height="16"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+  <script>
+    window.addEventListener('scroll', () => {
+      const doc = document.documentElement;
+      const pct = (window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100;
+      const bar = document.getElementById('reading-progress');
+      if (bar) bar.style.width = Math.min(pct, 100) + '%';
+      const btn = document.getElementById('back-to-top');
+      if (btn) btn.classList.toggle('visible', window.scrollY > 400);
+    });
   </script>
 </body>
 </html>
