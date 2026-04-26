@@ -79,20 +79,21 @@
         <img src="../images/m1_sub1.jpg" alt="" id="sub1ImgAlt" loading="lazy">
       </div>
 
-      <div class="video-local-wrap" id="wrap_m1_video1_mp4">
-        <div class="video-local-placeholder" onclick="playLocalVideo(this)">
-          <div class="play-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          </div>
-          <span class="placeholder-filename">m1_video1.mp4</span>
-          <span class="placeholder-hint" data-i18n="vid_hint">Pon el archivo en la carpeta videos/ y recarga la página</span>
+      <div class="yt-module-wrap">
+        <div class="yt-embed-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/gFuTGQUPfdE?si=VhUDhC8UceG5-a1a"
+            title="¿Cómo Crear Contraseñas Seguras?"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
         </div>
-        <video controls preload="none" src="../videos/m1_video1.mp4"
-               onerror="showVideoError(this)" oncanplay="hidePlaceholder(this)">
-          Tu navegador no soporta video HTML5.
-        </video>
+        <div class="yt-module-caption">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="11" height="11" style="flex-shrink:0;margin-top:1px"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span data-i18n="vid_m1_lbl1">¿Cómo Crear Contraseñas Seguras?</span>
+        </div>
       </div>
-      <div class="video-local-label" data-i18n="vid_m1_lbl1">Video 1</div>
 
       <p class="sub-body" id="sub1Body">–</p>
 
@@ -127,20 +128,21 @@
         <img src="../images/m1_sub2.jpg" alt="" id="sub2ImgAlt" loading="lazy">
       </div>
 
-      <div class="video-local-wrap" id="wrap_m1_video2_mp4">
-        <div class="video-local-placeholder" onclick="playLocalVideo(this)">
-          <div class="play-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          </div>
-          <span class="placeholder-filename">m1_video2.mp4</span>
-          <span class="placeholder-hint" data-i18n="vid_hint">Pon el archivo en la carpeta videos/ y recarga la página</span>
+      <div class="yt-module-wrap">
+        <div class="yt-embed-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/lnLSBzMSqBE?rel=0&modestbranding=1"
+            title="Privacidad en Redes Sociales"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
         </div>
-        <video controls preload="none" src="../videos/m1_video2.mp4"
-               onerror="showVideoError(this)" oncanplay="hidePlaceholder(this)">
-          Tu navegador no soporta video HTML5.
-        </video>
+        <div class="yt-module-caption">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="11" height="11" style="flex-shrink:0;margin-top:1px"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span data-i18n="vid_m1_lbl2">Privacidad en Redes Sociales</span>
+        </div>
       </div>
-      <div class="video-local-label" data-i18n="vid_m1_lbl2">Video 2</div>
 
       <p class="sub-body" id="sub2Body">–</p>
 
@@ -201,20 +203,6 @@
   </footer>
 
   <script src="../main.js"></script>
-  <script>
-    function hidePlaceholder(videoEl) {
-      const ph = videoEl.previousElementSibling;
-      if (ph && ph.classList.contains('video-local-placeholder')) ph.style.display = 'none';
-    }
-    function showVideoError(videoEl) {
-      const ph = videoEl.previousElementSibling;
-      if (ph) { const h = ph.querySelector('.placeholder-hint'); if (h) h.style.color='var(--accent2)'; }
-    }
-    function playLocalVideo(placeholderEl) {
-      const video = placeholderEl.nextElementSibling;
-      if (video && video.tagName === 'VIDEO') { video.load(); video.play().catch(()=>{}); }
-    }
-  </script>
   <script>
     const MID = 'm1';
     function renderList(ulId, items) {

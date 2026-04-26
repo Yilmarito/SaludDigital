@@ -8,6 +8,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,700;1,9..144,900&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Gallery key-points overlay */
+    .gallery-kp-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: .32rem;
+      margin-bottom: .6rem;
+    }
+    .gallery-kp-label {
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.5);
+      margin-bottom: .2rem;
+      display: block;
+    }
+    .gallery-kp-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .45rem;
+      font-size: .82rem;
+      color: rgba(255,255,255,.88);
+      line-height: 1.45;
+    }
+    .gallery-kp-item svg { color: #6fcf97; margin-top: 2px; }
+  </style>
 </head>
 <body>
   <div id="reading-progress"></div>
@@ -112,8 +139,8 @@
   <section class="gallery-section" id="modules">
     <div class="gallery-preamble reveal">
       <span class="tag" data-i18n="mod_tag">Contenido</span>
-  
-      <p data-i18n="mod_preamble">En esta plataforma encontrarás un espacio diseñado para promover el bienestar digital, donde podrás explorar contenidos orientados a mejorar tu relación con la tecnología. Aquí descubrirás estrategias para gestionar tu tiempo en línea, fortalecer tu salud mental digital, practicar una ciudadanía responsable y adoptar hábitos digitales sostenibles. A través de recursos prácticos e información respaldada científicamente, buscamos generar conciencia sobre el uso equilibrado de los dispositivos.</p>
+     
+      <p data-i18n="mod_preamble">En esta plataforma encontrarás un espacio diseñado para promover el bienestar digital, donde podrás explorar contenidos orientados a mejorar tu relación con la tecnología. Aquí descubrirás estrategias para gestionar tu tiempo en línea, fortalecer tu salud mental digital, practicar una ciudadanía responsable y adoptar hábitos digitales sostenibles. A través de recursos prácticos e información respaldada científicamente, buscamos generar conciencia sobre el uso equilibrado de los dispositivos</p>
       <div class="gallery-preamble-dots">
         <span class="gdot active" onclick="goSlide(0)"></span>
         <span class="gdot" onclick="goSlide(1)"></span>
@@ -246,7 +273,17 @@
       document.getElementById('galleryTitle').textContent = d.title;
       document.getElementById('galleryDesc').textContent  = d.desc;
       const subsEl = document.getElementById('gallerySubs');
-      subsEl.innerHTML = d.tags.map(t => `<span class="gallery-sub-tag">${t}</span>`).join('');
+      // Key-point bullets
+      const kpLabel = lang === 'en' ? 'What you\'ll learn' : 'Lo que aprenderás';
+      const kpHtml = d.kp && d.kp.length
+        ? `<div class="gallery-kp-wrap">
+            <span class="gallery-kp-label">${kpLabel}</span>
+            ${d.kp.map(p => `<div class="gallery-kp-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="11" height="11" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg><span>${p}</span></div>`).join('')}
+          </div>`
+        : '';
+      // Tag pills
+      const tagsHtml = d.tags.map(t => `<span class="gallery-sub-tag">${t}</span>`).join('');
+      subsEl.innerHTML = kpHtml + `<div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem">${tagsHtml}</div>`;
       img.style.opacity = '1'; overlay.style.opacity = '1';
     }, 220);
     document.querySelectorAll('.gdot').forEach((el, i) => el.classList.toggle('active', i === idx));
@@ -273,18 +310,16 @@
     <div class="video-grid">
       <div class="video-card">
         <div class="yt-embed-wrap">
-          <div class="yt-placeholder" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;background:rgba(255,255,255,.04);border-radius:12px 12px 0 0;">
-            <div style="width:52px;height:52px;border-radius:50%;background:rgba(42,92,69,.15);border:1.5px solid rgba(42,92,69,.3);display:flex;align-items:center;justify-content:center;">
-              <svg style="width:20px;height:20px;fill:rgba(255,255,255,.5)" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            </div>
-            <span style="font-size:.7rem;color:rgba(255,255,255,.3);font-family:monospace;"><<iframe width="560" height="315" src="https://www.youtube.com/embed/VWWSyvrD5io?si=2tKvO5hOMC6S_ihp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>></span>
-          </div>
+          <iframe src="https://www.youtube.com/embed/TZ7JLOiJFm0?si=QbRdx7wSULkF24Zd"
+                  title="Introducción a la Salud Digital"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
         </div>
         <div class="video-meta">
           <div class="video-badge">
             <svg style="width:10px;height:10px;fill:currentColor" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             YouTube
-
           </div>
           <div class="video-title" data-i18n="vid_index_1_title">Introducción a la Salud Digital</div>
           <div class="video-desc"  data-i18n="vid_index_1_desc">Visión general del bienestar en la era digital.</div>
@@ -292,12 +327,11 @@
       </div>
       <div class="video-card">
         <div class="yt-embed-wrap">
-          <div class="yt-placeholder" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;background:rgba(255,255,255,.04);border-radius:12px 12px 0 0;">
-            <div style="width:52px;height:52px;border-radius:50%;background:rgba(42,92,69,.15);border:1.5px solid rgba(42,92,69,.3);display:flex;align-items:center;justify-content:center;">
-              <svg style="width:20px;height:20px;fill:rgba(255,255,255,.5)" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            </div>
-            <span style="font-size:.7rem;color:rgba(255,255,255,.3);font-family:monospace;"><iframe width="560" height="315" src="https://www.youtube.com/embed/EZ0B6vWbvO0?si=1Olk57lapOTz-K_X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></span>
-          </div>
+          <iframe src="https://www.youtube.com/embed/EZ0B6vWbvO0?si=1Olk57lapOTz-K_X"
+                  title="Hábitos Digitales Saludables"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
         </div>
         <div class="video-meta">
           <div class="video-badge">
@@ -310,12 +344,11 @@
       </div>
       <div class="video-card">
         <div class="yt-embed-wrap">
-          <div class="yt-placeholder" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;background:rgba(255,255,255,.04);border-radius:12px 12px 0 0;">
-            <div style="width:52px;height:52px;border-radius:50%;background:rgba(42,92,69,.15);border:1.5px solid rgba(42,92,69,.3);display:flex;align-items:center;justify-content:center;">
-              <svg style="width:20px;height:20px;fill:rgba(255,255,255,.5)" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            </div>
-            <span style="font-size:.7rem;color:rgba(255,255,255,.3);font-family:monospace;"><iframe width="560" height="315" src="https://www.youtube.com/embed/hAkHEeLj_AE?si=XW1t35tpnagaiTtk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></span>
-          </div>
+          <iframe src="https://www.youtube.com/embed/hAkHEeLj_AE?si=XW1t35tpnagaiTtk"
+                  title="Impacto de las Redes Sociales"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
         </div>
         <div class="video-meta">
           <div class="video-badge">
@@ -362,20 +395,6 @@
   </footer>
 
   <script src="main.js"></script>
-  <script>
-    function hidePlaceholder(videoEl) {
-      const ph = videoEl.previousElementSibling;
-      if (ph && ph.classList.contains('video-local-placeholder')) ph.style.display = 'none';
-    }
-    function showVideoError(videoEl) {
-      const ph = videoEl.previousElementSibling;
-      if (ph) { const h = ph.querySelector('.placeholder-hint'); if (h) h.style.color='var(--accent2)'; }
-    }
-    function playLocalVideo(placeholderEl) {
-      const video = placeholderEl.nextElementSibling;
-      if (video && video.tagName === 'VIDEO') { video.load(); video.play().catch(()=>{}); }
-    }
-  </script>
   <script>
     (function () {
       const _base = setLang;

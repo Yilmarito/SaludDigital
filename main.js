@@ -118,7 +118,7 @@ const i18n = {
     m4_kp3: "Protege tu sueño: sin pantallas 30 min antes",
     m5_kp1: "Reduce las emisiones de tu actividad digital",
     m5_kp2: "Repara y reutiliza dispositivos tecnológicos",
-    m5_kp3: "Adopt hábitos tecnológicos sostenibles",
+    m5_kp3: "Adopta hábitos tecnológicos sostenibles",
 
 
     /* ── Contenido enriquecido de subsecciones ── */
